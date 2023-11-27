@@ -45,6 +45,8 @@ body{
   transition: 0.7s;
 }
 .header{
+  z-index: 10;
+  top: 0;
   margin-bottom: 1vh;
   transition: 0.7s;
   display: grid;
@@ -52,7 +54,7 @@ body{
   width: 100%;
   height: 5vh;
   color: #FFF;
-  grid-template-columns: 14vh 12vh 14vh 14vh auto;
+  grid-template-columns: 14vh 12vh 14vh 14vh auto auto;
   gap: 8vh;
   font-size: 2vh;
   align-items: center;
@@ -71,6 +73,9 @@ body{
     font-size: 3vh;
     transition: all, 0.4s;
     border-bottom: #fda500 solid;
+  }
+  & img {
+    height: 4.5vh;
   }
 }
 @keyframes fadeInUp {
@@ -144,12 +149,21 @@ body{
     background-color: #FFEDD1;
     border-radius: 2vh;
     box-shadow: inset 0.3vh 0.7vh 0.26vh 0pvh rgba(255, 252, 252, 0.25);
-    width: 30vh;
+    width: 35vh;
     transition: 0.7s;
-  }
-  & a:hover {
-    transition: 0.7s;
-    box-shadow: inset 0 -7vh 0 rgb(240, 204, 3), 0.3vh 0.7vh 0.26vh 0vh rgba(255, 252, 252, 0.25);
+
+      &::before{
+      content:"<<";
+      color: rgb(0, 0, 0);
+    }
+      &:hover::after {
+      content: ">>";
+      color: rgb(0, 0, 0);
+    }
+      &:hover {
+      transition: 0.7s;
+      box-shadow: inset 0 -7vh 0 rgb(240, 204, 3), 0.3vh 0.7vh 0.26vh 0vh rgba(255, 252, 252, 0.25);
+    }
   }
 }
 [class^="ladder-"] {
@@ -192,6 +206,14 @@ body{
   height: 45vh;
   background-color: rgb(45, 43, 43);
   box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+  transition: 0.6s;
+
+  &:hover{
+  transition: 0.6s;
+  opacity: 0.8;
+  width: 110%;
+  height: 110%;
+  }
 }
 .tile-2 {
   grid-area: B;
@@ -241,6 +263,14 @@ body{
   background-size: cover;
   background-color: rgb(45, 43, 43);
   box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+  transition: 0.6s;
+
+  &:hover{
+  transition: 0.6s;
+  opacity: 0.8;
+  width: 90%;
+  height: 90%;
+  }
 }
 .tile-5 {
   grid-area: E;
@@ -301,6 +331,14 @@ body{
 	height: 100%; 
 	object-fit: cover; 
 	object-position: bottom;
+  transition: 0.6s;
+
+    &:hover{
+      transition: 0.6s;
+      opacity: 0.8;
+      width: 110%;
+      height: 110%;
+    }
   }
 }
 
@@ -323,7 +361,7 @@ body{
   border-radius: 3vh;
 }
 .button li:hover {
-	box-shadow: inset 0 -11.7vh 0 #000000, 2px 2px 3px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 -13vh 0 #000000, 2px 2px 3px rgba(0, 0, 0, 0.3);
   outline: 2px solid  #000000;
 	color: #ffffff;
 	transition: 1s;
@@ -367,6 +405,7 @@ body{
   margin-left: 16vh;
   
   & iframe {
+    width: 100%;
     border-radius: 2vh;
     overflow-x: hidden;
   }
