@@ -8,13 +8,13 @@
 # Навигация
 *  <a href="#task">Задачи лабораторной работы</a>
 *  <a href="#strukt">Структура сайта</a>
+*  <a href="#discr">Подробное описание</a>
     *  <a href="#head">Head</a>
     *  <a href="#menu">Menu</a>
     *  <a href="#tile_group">Tile group</a>
     *  <a href="#uper">Uper</a>
     *  <a href="#support">Support</a>
     *  <a href="#footer">Footer</a>
-*  <a href="#discr">Подробное описание</a> 
 *  <a href="#fin_task">Выполненные задачи</a> 
 
 <h1 id="task">Задачи лабораторной работы:</h1>
