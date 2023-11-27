@@ -294,13 +294,18 @@ body{
   position: fixed;
   width: 6vh;
   height: 6vh;
-  border-top: 10px solid #2d2c2e;
-  border-right: 10px solid #2d2c2e;
+  border-top: 10px solid rgb(240, 204, 3);
+  border-right: 10px solid rgb(240, 204, 3);
   margin-right: 60px;
   transform: rotate(-45deg);
   
   & a {
     color: #00000000;
+  }
+  &:hover {
+    width: 7vh;
+    height: 7vh;
+    transition: 0.4s;
   }
 }
 .support {
