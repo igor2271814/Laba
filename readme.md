@@ -3,7 +3,7 @@
 На этой странице будут выкладываться лабораторные работы по дисциплине ВвИТ
 Основная страница с дизайном для текущих работ: <a href="https://www.figma.com/file/dJriDptlswrqLomE1t1veN/Nikol_Laba1?type=design&node-id=2%3A39&mode=design&t=GBNXklVeO8bGJHRE-1">Дизайн</a>
 
-На текущий момент основная версия 0.2. Есть некоторые проблемы со скриптом открытия/закрытия класса menu, отображением tile_group, все остальное работает наджно как швейцарские часы.
+На текущий момент основная версия 0.3. Выполнены все задачи для лабораторной работы. Есть некоторые проблемы со скриптом открытия/закрытия класса menu, отображением tile_group, все остальное работает наджно как швейцарские часы.
 
 # Навигация
 *  <a href="#task">Задачи лабораторной работы</a>
@@ -665,7 +665,99 @@ CSS
   4. Для выполнения этого пункта был создан класс tile_group, внутри которого есть и текстовые блоки, и картинки и т.д. Выравнивание текста в хедере выполнено в html
 *      <div id="header" class="header" name="header" align="center">
 5. Для выполнения этого пункта был создан класс tile_group
-6. В процессе разработки
-7. В процессе разработки
-8. В процессе разработки
+6. Изменение яркости при наведении выполнено в классах tile-1, tile-4, support
+*      .support img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: bottom;
+           object-position: bottom;
+        transition: 0.6s;
+      }
+      .support img:hover {
+        transition: 0.6s;
+        opacity: 0.8;
+        width: 110%;
+        height: 110%;
+      }
+      .tile-4:hover {
+        transition: 0.6s;
+        opacity: 0.8;
+        width: 90%;
+        height: 90%;
+      }
+      .tile-1:hover {
+        transition: 0.6s;
+        opacity: 0.8;
+        width: 110%;
+        height: 110%;
+      }
+   Для всего сайта применен шрифт Bowlby One, футер заполнен контентом, и на сайте есть карта Яндекс, с нужными размерами
+*      @font-face {
+        font-family: "Bowlby One";
+        src: url(../../font/BowlbyOne/BowlbyOne-Regular.ttf);
+      }
+        body {
+        background: rgba(255, 237, 209, 0.89);
+        font-family: "Bowlby One";
+        margin: 0;
+        transition: 0.7s;
+      }
+         <div class="footer"> <!--footer-->
+          <div class="for_dot">
+              <ul>
+                  <li>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <circle cx="16" cy="16" r="16" fill="#D9D9D9" />
+                      </svg>
+                  </li>
+                  <li>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <circle cx="16" cy="16" r="16" fill="#D9D9D9" />
+                      </svg>
+                  </li>
+                  <li>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                          <circle cx="16" cy="16" r="16" fill="#D9D9D9" />
+                      </svg>
+                  </li>
+              </ul>
+          </div>
+          <div class="map_site">
+              <iframe src="index.html"></iframe>
+          </div>
+          <div class="bottom_panel">
+              <ul>
+                  <li>
+                      <a href="#">terms of use</a>
+                  </li>
+                  <li>
+                      <a href="#">privacy policy</a>
+                  </li>
+                  <li>
+                      <a href="#">cookie settings</a>
+                  </li>
+              </ul>
+          </div>
+      </div><!--footer-->
+7. Ссылки оформлены как "якорь" и для них есть класс uper, при нажатии на который пользователя направляет на верхнюю часть сайта
+*      <div class="uper"><!--uper-->
+          <a href="#anchor">Aaad</a>
+      </div><!--uper-->
+      <div class="tile_group"><!--tile group-->
+          <div class="tile-1" id="anchor"></div>
+   Элементы before, after указал для ссылок класса menu_open
+*      .menu_open.active a::before {
+        content: "<<";
+        color: rgb(0, 0, 0);
+      }
+      .menu_open.active a:hover::after {
+        content: ">>";
+        color: rgb(0, 0, 0);
+      }
+8. Карта сайта встроена в footer
+*      <div class="map_site">
+        <iframe src="index.html"></iframe>
+       </div>
 9. Концепция проекта выполнена в Figma и доступна всем по ссылке <a href="https://www.figma.com/file/dJriDptlswrqLomE1t1veN/Nikol_Laba1?type=design&node-id=2%3A39&mode=design&t=GBNXklVeO8bGJHRE-1">Дизайн</a>
