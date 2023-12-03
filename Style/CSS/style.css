@@ -2,10 +2,18 @@
   font-family: "Bowlby One";
   src: url(../../font/BowlbyOne/BowlbyOne-Regular.ttf);
 }
+input:-moz-placeholder {
+  font-family: Bowlby One;
+}
+
+input::-webkit-input-placeholder {
+  font-family: Bowlby One;
+}
+
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3E3B3B #E3D3BA;
+  scrollbar-color: #3e3b3b #e3d3ba;
 }
 
 /* Chrome, Edge and Safari */
@@ -16,20 +24,20 @@
 
 *::-webkit-scrollbar-track {
   border-radius: 6px;
-  background-color: #E3D3BA;
+  background-color: #e3d3ba;
 }
 
 *::-webkit-scrollbar-track:hover {
-  background-color: #EDDCC2;
+  background-color: #eddcc2;
 }
 
 *::-webkit-scrollbar-track:active {
-  background-color: #EDDCC2;
+  background-color: #eddcc2;
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 9px;
-  background-color: #3E3B3B;
+  background-color: #3e3b3b;
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -47,6 +55,7 @@ body {
   transition: 0.7s;
 }
 
+/*header start*/
 .header {
   z-index: 10;
   top: 0;
@@ -56,7 +65,7 @@ body {
   background-color: #555;
   width: 100%;
   height: 5vh;
-  color: #FFF;
+  color: #fff;
   grid-template-columns: 14vh 12vh 14vh 14vh auto auto;
   gap: 8vh;
   font-size: 2vh;
@@ -69,7 +78,7 @@ body {
 }
 .header a {
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   text-shadow: 0.8vh -0.7vh 0.2vh rgba(0, 0, 0, 0.25);
 }
 .header a:hover {
@@ -97,6 +106,8 @@ body {
   display: grid;
 }
 
+/*header end*/
+/*menu start*/
 .menu {
   transition: 0.7s;
   display: grid;
@@ -150,7 +161,7 @@ body {
   text-decoration: none;
   text-align: center;
   padding: 1vh 1vh 1vh 1vh;
-  background-color: #FFEDD1;
+  background-color: #ffedd1;
   border-radius: 2vh;
   box-shadow: inset 0.3vh 0.7vh 0.26vh 0pvh rgba(255, 252, 252, 0.25);
   width: 35vh;
@@ -186,6 +197,8 @@ body {
   transition: transform 0.7s 0.7s;
 }
 
+/*menu end*/
+/*tile start*/
 .tile_group {
   display: grid;
   margin: 0vh 11vh 2vh 7vh;
@@ -241,7 +254,7 @@ body {
   font-size: 8vh;
   display: grid;
   border-radius: 9vh;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   place-items: center;
   box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
@@ -286,10 +299,11 @@ body {
 [class^=tile-] {
   display: grid;
   border-radius: 7vh;
-  color: #FFF;
+  color: #fff;
   text-align: justify;
 }
 
+/*tile end*/
 .uper {
   z-index: 11;
   right: 0vh;
@@ -382,26 +396,135 @@ body {
 }
 
 .button p {
-  color: #FFF;
+  color: #fff;
   margin: 2% auto 2% auto;
   text-align: center;
   font-size: 36px;
   font-style: normal;
 }
 
-.dot {
-  display: inline-block;
+/*forms start*/
+.forms {
+  display: grid;
+  gap: 2vh;
+  margin: 5vh 3vh 0vh 3vh;
+  grid-template-areas: "A A A A" "B C C C" "D C C C";
+}
+.forms h1 {
+  width: 45%;
 }
 
+.block-1 {
+  display: grid;
+  grid-area: A;
+  height: 20vh;
+  border-radius: 2vh;
+  background: #ffe9c6;
+  box-shadow: 1.5vh -1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+}
+
+.block-2 {
+  display: grid;
+  grid-area: B;
+  align-items: center;
+}
+
+.block-3 {
+  display: grid;
+  grid-area: D;
+  border-radius: 3vh;
+  gap: 1.5vh;
+  background: linear-gradient(180deg, #ffe5a3 0.07%, rgba(144, 101, 34, 0.5) 50.81%, rgba(45, 43, 43, 0) 135.38%);
+  padding: 3vh 3vh 3vh 3vh;
+  box-shadow: -1vh 0.9vh 0.2vh 0vh rgba(0, 0, 0, 0.25) inset;
+  grid-template-areas: "A A" "B C" "D D" "E E";
+}
+.block-3 input {
+  border: 1px solid #000;
+  background: #fff0d8;
+  box-shadow: 0.3vh 0.5vh 0.4vh 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 1vh;
+}
+.block-3 textarea {
+  border: 1px solid #000;
+  background: #fff0d8;
+  box-shadow: 0.3vh 0.5vh 0.4vh 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 1vh;
+}
+
+.block-4 {
+  grid-area: C;
+  display: grid;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 3vh;
+}
+.block-4 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.inp-1 {
+  grid-area: A;
+  height: 70%;
+  gap: 10px;
+}
+
+.inp-2 {
+  grid-area: B;
+  height: 70%;
+}
+
+.inp-3 {
+  grid-area: C;
+  height: 70%;
+}
+
+.inp-4 {
+  grid-area: D;
+  height: 20vh;
+}
+
+.inp-5 {
+  grid-area: E;
+}
+.inp-5 button {
+  background-color: #ebb400;
+  box-shadow: inset 0 0px 0 rgb(243, 191, 48);
+  transition: 1s;
+  font-family: Bowlby One;
+  font-size: 3vh;
+}
+.inp-5 button:hover {
+  box-shadow: inset 0 -13vh 0 #000000, 2px 2px 3px rgba(0, 0, 0, 0.3);
+  outline: 2px solid #000000;
+  color: #ffffff;
+  transition: 1s;
+}
+
+[class^=block-] {
+  display: grid;
+}
+
+[class^=inp-] {
+  display: grid;
+}
+
+/*forms end*/
+/*footer start*/
 .footer {
   margin-top: 3%;
-  background-color: #2D2B2B;
+  background-color: #2d2b2b;
   width: 100%;
   height: 35%;
 }
 .footer p {
   padding: 0.5% 10% 0.5% 10%;
-  color: #686B6E;
+  color: #686b6e;
   text-align: center;
   font-size: 2.5vh;
   font-style: normal;
@@ -435,7 +558,7 @@ body {
 
 .bottom_panel a {
   text-decoration: none;
-  color: #E8E9E9;
+  color: #e8e9e9;
   font-size: 3vh;
   transition: 0.7s;
 }
@@ -453,4 +576,6 @@ body {
 .bottom_panel ul {
   margin-top: 0;
   padding-top: 0;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*footer end*//*# sourceMappingURL=style.css.map */

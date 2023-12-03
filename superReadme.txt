@@ -1,0 +1,2 @@
+Ссылка на дизайна сайта в фигме - https://www.figma.com/file/dJriDptlswrqLomE1t1veN/Nikol_Laba1?type=design&node-id=0%3A1&mode=design&t=kMURW0HlfgPGWdXI-1
+Ссылка на сам проект в github - https://github.com/igor2271814/Laba
