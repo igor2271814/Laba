@@ -3,7 +3,7 @@
 На этой странице будут выкладываться лабораторные работы по дисциплине ВвИТ
 Основная страница с дизайном для текущих работ: <a href="https://www.figma.com/file/dJriDptlswrqLomE1t1veN/Nikol_Laba1?type=design&node-id=2%3A39&mode=design&t=GBNXklVeO8bGJHRE-1">Дизайн</a>
 
-На текущий момент основная версия 0.3. Выполнены все задачи для лабораторной работы. Есть некоторые проблемы со скриптом открытия/закрытия класса menu, отображением tile_group, все остальное работает надежно как швейцарские часы.
+На текущий момент основная версия 0.4. Выполнены все задачи для лабораторной работы. Есть некоторые проблемы со скриптом открытия/закрытия класса menu, отображением tile_group, все остальное работает надежно как швейцарские часы.
 
 # Навигация
 *  <a href="#task">Задачи лабораторной работы</a>
@@ -764,4 +764,34 @@ CSS
 *      <div class="map_site">
         <iframe src="index.html"></iframe>
        </div>
-9. Концепция проекта выполнена в Figma и доступна всем по ссылке <a href="https://www.figma.com/file/dJriDptlswrqLomE1t1veN/Nikol_Laba1?type=design&node-id=2%3A39&mode=design&t=GBNXklVeO8bGJHRE-1">Дизайн</a>
+9. Градиент есть в нескольких местах. Например:
+*      [class^="tile_little-"] {
+        font-size: 8vh;
+        display: grid;
+        border-radius: 9vh;
+        color: #fff;
+        text-align: center;
+        place-items: center;
+        box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+        background: rgb(45, 43, 43);
+        background: linear-gradient(
+          180deg,
+          rgba(45, 43, 43, 1) 0%,
+          rgba(45, 43, 43, 1) 34%,
+          rgba(168, 151, 116, 0.95) 57%,
+          rgba(226, 199, 146, 0.95) 77%,
+          rgba(255, 237, 209, 1) 100%
+        );
+      }
+10. Форма обратной связи создана внутри дива forms
+*        <form action="" class="block-3">
+            <div class="inp-1"><input type="text" placeholder="Full name" required></input></div>
+            <div class="inp-2"><input type="number" placeholder="Phone number" required></input></div>
+            <div class="inp-3"><input type="email" placeholder="Email" required></input></div>
+            <div class="inp-4"><textarea type="text" placeholder="Message"></textarea></div>
+            <div class="inp-5"><button type="submit">Send</button></div>
+        </form>
+11. Различные изображения есть как в качестве background так и в качестве <img>
+12. Загрузка файла возможна по нажатию кнопки terms of use
+*      <a href="superReadme.txt" download="">terms of use</a>
+13. Концепция проекта выполнена в Figma и доступна всем по ссылке <a href="https://www.figma.com/file/dJriDptlswrqLomE1t1veN/Nikol_Laba1?type=design&node-id=2%3A39&mode=design&t=GBNXklVeO8bGJHRE-1">Дизайн</a>
