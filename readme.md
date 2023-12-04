@@ -7,6 +7,7 @@
 
 # Навигация
 *  <a href="#task">Задачи лабораторной работы</a>
+*  <a href="#pre_wa">Предпросмотр</a>
 *  <a href="#strukt">Структура сайта</a>
 *  <a href="#discr">Подробное описание</a>
     *  <a href="#head">Head</a>
@@ -44,7 +45,7 @@
 </ol>
 
 <h1 id="pre_wa">Предпросмотр</h1>
-<img src="Img/pre_wa/gif">
+<img src="Img/pre_wa.gif">
 
 <h1 id="strukt">Структура сайта:</h1>
 
