@@ -143,7 +143,7 @@ body {
   display: grid;
   justify-content: center;
   position: fixed;
-  right: -25%;
+  transform: translateX(100vh);
   width: 25%;
   height: 96vh;
   background-color: rgba(0, 0, 0, 0.95);
@@ -152,9 +152,60 @@ body {
   border-radius: 3vh 0 0 3vh;
 }
 
+.menu_open {
+  transform: translateX(100vh);
+  transition: transform 0.7s ease-in-out;
+}
+.menu_open span {
+  margin-top: 2vh;
+  text-align: right;
+  font-size: 3vh;
+  width: 120%;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.menu_open span:hover {
+  color: #ebb400;
+  transition: 0.4s;
+}
+.menu_open a {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  padding: 1vh 1vh 1vh 1vh;
+  background-color: #ffedd1;
+  border-radius: 2vh;
+  box-shadow: inset 0.3vh 0.7vh 0.26vh 0pvh rgba(255, 252, 252, 0.25);
+  width: 35vh;
+  transition: 0.7s;
+}
+.menu_open a::before {
+  content: "<<";
+  color: rgb(0, 0, 0);
+}
+.menu_open a:hover::after {
+  content: ">>";
+  color: rgb(0, 0, 0);
+}
+.menu_open a:hover {
+  transition: 0.7s;
+  box-shadow: inset 0 -7vh 0 rgb(240, 204, 3), 0.3vh 0.7vh 0.26vh 0vh rgba(255, 252, 252, 0.25);
+}
+
 .menu_open.active {
-  right: 0;
-  transition: right 0.7s;
+  transform: translateX(0);
+}
+.menu_open.active span {
+  margin-top: 2vh;
+  text-align: right;
+  font-size: 3vh;
+  width: 120%;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.menu_open.active span:hover {
+  color: #ebb400;
+  transition: 0.4s;
 }
 .menu_open.active a {
   color: #000;
@@ -189,12 +240,11 @@ body {
 
 .close_menu {
   transform: scale(0);
-  transition: transform 0.7s;
+  transition: transform 0.7s ease-in-out;
 }
 
 .close_menu.active {
   transform: scale(1);
-  transition: transform 0.7s 0.7s;
 }
 
 /*menu end*/
@@ -404,6 +454,14 @@ body {
 }
 
 /*forms start*/
+.wrapper {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+  background: rgb(45, 43, 43);
+  background: linear-gradient(0deg, rgb(45, 43, 43) 0%, rgb(45, 43, 43) 34%, rgba(168, 151, 116, 0.95) 57%, rgba(226, 199, 146, 0.95) 77%, rgb(255, 237, 209) 100%);
+}
+
 .forms {
   display: grid;
   gap: 2vh;
@@ -517,7 +575,7 @@ body {
 /*forms end*/
 /*footer start*/
 .footer {
-  margin-top: 3%;
+  margin-top: -3vh;
   background-color: #2d2b2b;
   width: 100%;
   height: 35%;

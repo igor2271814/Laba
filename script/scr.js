@@ -1,11 +1,28 @@
 document.querySelector('.menu').addEventListener('click', () => {
-    document.querySelector('.menu_open').classList.add('active');
-    document.querySelector('.close_menu').classList.add('active');
+    const menuOpen = document.querySelector('.menu_open');
+    const closeMenu = document.querySelector('.close_menu');
+
+    menuOpen.classList.add('active');
+    closeMenu.classList.add('active');
 });
+
 document.querySelector('.close_menu').addEventListener('click', () => {
-    document.querySelector('.menu_open').classList.remove('active');
-    document.querySelector('.close_menu').classList.remove('active');
+    const menuOpen = document.querySelector('.menu_open');
+    const closeMenu = document.querySelector('.close_menu');
+
+    closeMenu.classList.remove('active');
+
+    setTimeout(() => {
+        menuOpen.classList.remove('active');
+    }, 70);
 });
+
+// Обработчик для кнопки "close button"
+document.querySelector('.close_menu').addEventListener('click', () => {
+    const menuOpen = document.querySelector('.menu_open');
+    menuOpen.classList.remove('active');
+});
+
 let header = document.getElementById('header').classList
 let active_class = 'header_scrolled'
 window.addEventListener('scroll', e => {
