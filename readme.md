@@ -3,7 +3,7 @@
 На этой странице будут выкладываться лабораторные работы по дисциплине ВвИТ
 Основная страница с дизайном для текущих работ: <a href="https://www.figma.com/file/dJriDptlswrqLomE1t1veN/Nikol_Laba1?type=design&node-id=2%3A39&mode=design&t=GBNXklVeO8bGJHRE-1">Дизайн</a>
 
-На текущий момент основная версия 0.4. Выполнены все задачи для лабораторной работы. Есть некоторые проблемы с отображением tile_group, все остальное работает надежно как швейцарские часы. МОбильной версии пока нет. Посмотреть, как все это выглядит можно <a href="https://igor2271814.github.io/Laba/">тут</a>
+На текущий момент основная версия 0.5. Выполнены все задачи для лабораторной работы. Есть некоторые проблемы с отображением tile_group и темной темой, все остальное работает надежно как швейцарские часы. Мобильной версии пока нет. Посмотреть, как все это выглядит можно <a href="https://igor2271814.github.io/Laba/">тут</a>
 
 # Навигация
 *  <a href="#task">Задачи лабораторной работы</a>
@@ -15,6 +15,7 @@
     *  <a href="#tile_group">Tile group</a>
     *  <a href="#uper">Uper</a>
     *  <a href="#support">Support</a>
+    *  <a herf="wrapper">Wrapper</a>
     *  <a href="#footer">Footer</a>
 *  <a href="#fin_task">Выполненные задачи</a> 
 
@@ -58,6 +59,7 @@
 *  button
 *  support
 *  button
+*  wrapper
 *  footer
 
 *     <div class="header">
@@ -83,6 +85,9 @@
       </div>
       <div class="button">
       
+      </div>
+      <div class="wrapper">
+
       </div>
       <div class="footer">
       
@@ -147,22 +152,31 @@
   это кнопка, нарисованная на html и css. Для оформления внешнего вида кнопки я так-же использовал display: grid ибо так гораздо проще рисовать подобные объекты. Внутри класса menu есть несколько подклассов. Например: class="menu_open". По умолчанию этот класс пользователь не видит т.к. находится в отрицательной системе координат right: -25%. Процесс открытия этого блока работает очень просто. При помощи js добавляем menu событие "click". В css файле прописываем новый класс menu_open.active со свойствами:
 *       right: 0;
         transition: right 0.7s;
-    А по событию щелчка в класс menu добавляется класс active:
+    А по событию щелчка в класс menu добавляется класс active, а при нажатии на кнопку закрытия удаляет этот класс. Настроим классы menu_open, close_menu и добавим им эти события + интервал задержки для close_menu:
   -     document.querySelector('.menu').addEventListener('click', () => {
-        document.querySelector('.menu_open').classList.add('active');
-    Нужна ведь еще и кнопка закрытия. Потому добавляем button с классом close_menu и делаем все по аналогии с menu_open за исключением того, что кнопка не будет находиться в отрицательной системе координат. У неё будет
-  -     transform: scale(0);
-        	transition: transform 0.7s;
-    Это нужно для анимации плавного возникновения. По аналогии с menu_open дописываем добавление класса active в js код:
-  -     document.querySelector('.menu').addEventListener('click', () => {
-        document.querySelector('.menu_open').classList.add('active');
-        document.querySelector('.close_menu').classList.add('active');
-        });
-    ПС. Кнопка закрытия пока находится на стадии разработки т.к. следующий код отказывается убирать класс active
-  -     document.querySelector('.close_menu').addEventListener('click', () => {
-        document.querySelector('.menu_open').classList.remove('active');
-        document.querySelector('.close_menu').classList.remove('active');
-        });
+          const menuOpen = document.querySelector('.menu_open');
+          const closeMenu = document.querySelector('.close_menu');
+      
+          menuOpen.classList.add('active');
+          closeMenu.classList.add('active');
+         });
+      
+         document.querySelector('.close_menu').addEventListener('click', () => {
+             const menuOpen = document.querySelector('.menu_open');
+             const closeMenu = document.querySelector('.close_menu');
+         
+             closeMenu.classList.remove('active');
+         
+             setTimeout(() => {
+                 menuOpen.classList.remove('active');
+             }, 70);
+         });
+    И отдельно добавим обработчик событий для снопки закрытия:
+  -       document.querySelector('.close_menu').addEventListener('click', () => {
+          const menuOpen = document.querySelector('.menu_open');
+          menuOpen.classList.remove('active');
+          });
+    Далее остаётся только настройка внешнего вида кнопок и самого меню
     Т.к. это grid элемент то и оформлять будем следующим образом:
   -     <div class="box-4"></div>
         <div class="box-1"><span></span></div>
@@ -218,39 +232,109 @@
         display: grid;
         justify-content: center;
         position: fixed;
-        right: -25%;
+        transform: translateX(100vh);
         width: 25%;
         height: 96vh;
         background-color: rgba(0, 0, 0, 0.95);
         color: aliceblue;
         transition: right 0.7s 0.7s;
         border-radius: 3vh 0 0 3vh;
-        }
-        .menu_open.active {
-        right: 0;
-        transition: right 0.7s;
-        }
-        .menu_open.active a {
+      }
+      
+      .menu_open {
+        transform: translateX(100vh);
+        transition: transform 0.7s ease-in-out;
+      }
+      .menu_open span {
+        margin-top: 2vh;
+        text-align: right;
+        font-size: 3vh;
+        width: 120%;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+      .menu_open span:hover {
+        color: #ebb400;
+        transition: 0.4s;
+      }
+      .menu_open a {
         color: #000;
         text-decoration: none;
         text-align: center;
         padding: 1vh 1vh 1vh 1vh;
-        background-color: #FFEDD1;
+        background-color: #ffedd1;
         border-radius: 2vh;
         box-shadow: inset 0.3vh 0.7vh 0.26vh 0pvh rgba(255, 252, 252, 0.25);
-        width: 30vh;
+        width: 35vh;
         transition: 0.7s;
-        }
-        .menu_open.active a:hover {
+      }
+      .menu_open a::before {
+        content: "<<";
+        color: rgb(0, 0, 0);
+      }
+      .menu_open a:hover::after {
+        content: ">>";
+        color: rgb(0, 0, 0);
+      }
+      .menu_open a:hover {
         transition: 0.7s;
         box-shadow: inset 0 -7vh 0 rgb(240, 204, 3), 0.3vh 0.7vh 0.26vh 0vh rgba(255, 252, 252, 0.25);
-        }
-        [class^=ladder-] {
+      }
+      
+      .menu_open.active {
+        transform: translateX(0);
+      }
+      .menu_open.active span {
+        margin-top: 2vh;
+        text-align: right;
+        font-size: 3vh;
+        width: 120%;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+      .menu_open.active span:hover {
+        color: #ebb400;
+        transition: 0.4s;
+      }
+      .menu_open.active a {
+        color: #000;
+        text-decoration: none;
+        text-align: center;
+        padding: 1vh 1vh 1vh 1vh;
+        background-color: #ffedd1;
+        border-radius: 2vh;
+        box-shadow: inset 0.3vh 0.7vh 0.26vh 0pvh rgba(255, 252, 252, 0.25);
+        width: 35vh;
+        transition: 0.7s;
+      }
+      .menu_open.active a::before {
+        content: "<<";
+        color: rgb(0, 0, 0);
+      }
+      .menu_open.active a:hover::after {
+        content: ">>";
+        color: rgb(0, 0, 0);
+      }
+      .menu_open.active a:hover {
+        transition: 0.7s;
+        box-shadow: inset 0 -7vh 0 rgb(240, 204, 3), 0.3vh 0.7vh 0.26vh 0vh rgba(255, 252, 252, 0.25);
+      }
+      
+      [class^=ladder-] {
         display: grid;
         place-items: center;
         width: 30vh;
         font-size: 3vh;
-        }
+      }
+      
+      .close_menu {
+        transform: scale(0);
+        transition: transform 0.7s ease-in-out;
+      }
+      
+      .close_menu.active {
+        transform: scale(1);
+      }
     Для перехода на темную тему в ladder-5 добавим id="toggle" и зацикленную ссылку
   -     <div class="ladder-5"><a class="toggle" href="#">Another theme</a></div>
     Далее создаем новый css файл с названием dark_style.css но пока туда ничего не добавляем. В ссылку на обычный лист классов добавляем id="theme-link" (это нужно будет для связи через js). А далее достаточно простой код на js. Добавляем событие клика на нужную кнопку и условие. Если ссылка текущий лист классов - обычный лист то меняем на лист с темной темой. Иначе делаем наоборот:
@@ -505,6 +589,146 @@
         font-style: normal;
       }
   Второй блок кода делам по аналогии за исключением картинки. Вместо неё будет iframe с картами из Яндекса. Копируем и вставляем разметку, удаляем тег img и ставим вместо него предварительно сгенерированную карту Яндекс, далее меняем текст и готово
+*  <h2 id="wrapper">wrapper</h2>
+    Далее идет блок с формой обратной связи. Его сделает через grid. Все элементы расположим следующим образом:
+*      grid-template-areas:
+       "A A A A"
+       "B C C C"
+       "D C C C";
+   Участок A - отведен для заголовка, B - текст между формой и заголовком, D - сама форма и C - общая картинка. Теперь можно приступить к настройке Формы. Добавим поля с: ФИО, номер телефона, адрес почты и само сообщение посетителя сайта. Разметка будет выглядеть так:
+*        <form action="" class="block-3">
+            <div class="inp-1"><input type="text" placeholder="Full name" required></input></div>
+            <div class="inp-2"><input type="number" placeholder="Phone number" required></input></div>
+            <div class="inp-3"><input type="email" placeholder="Email" required></input></div>
+            <div class="inp-4"><textarea type="text" placeholder="Message"></textarea></div>
+            <div class="inp-5"><button type="submit">Send</button></div>
+        </form>
+    Далее дело только за визуальным наполнением:
+*      /*forms start*/
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+        background: rgb(45, 43, 43);
+        background: linear-gradient(
+          0deg,
+          rgba(45, 43, 43, 1) 0%,
+          rgba(45, 43, 43, 1) 34%,
+          rgba(168, 151, 116, 0.95) 57%,
+          rgba(226, 199, 146, 0.95) 77%,
+          rgba(255, 237, 209, 1) 100%
+        );
+      }
+      .forms {
+        display: grid;
+        gap: 2vh;
+        margin: 5vh 3vh 0vh 3vh;
+        grid-template-areas:
+          "A A A A"
+          "B C C C"
+          "D C C C";
+      
+        & h1 {
+          width: 45%;
+        }
+      }
+      .block-1 {
+        display: grid;
+        grid-area: A;
+        height: 20vh;
+        border-radius: 2vh;
+        background: #ffe9c6;
+        box-shadow: 1.5vh -1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+      }
+      .block-2 {
+        display: grid;
+        grid-area: B;
+        align-items: center;
+      }
+      .block-3 {
+        display: grid;
+        grid-area: D;
+        border-radius: 3vh;
+        gap: 1.5vh;
+        background: linear-gradient(180deg, #ffe5a3 0.07%, rgba(144, 101, 34, 0.5) 50.81%, rgba(45, 43, 43, 0) 135.38%);
+        padding: 3vh 3vh 3vh 3vh;
+        box-shadow: -1vh 0.9vh 0.2vh 0vh rgba(0, 0, 0, 0.25) inset;
+        grid-template-areas:
+          "A A"
+          "B C"
+          "D D"
+          "E E";
+      
+        & input {
+          border: 1px solid #000;
+          background: #fff0d8;
+          box-shadow: 0.3vh 0.5vh 0.4vh 0px rgba(0, 0, 0, 0.25) inset;
+          border-radius: 1vh;
+        }
+        & textarea {
+          border: 1px solid #000;
+          background: #fff0d8;
+          box-shadow: 0.3vh 0.5vh 0.4vh 0px rgba(0, 0, 0, 0.25) inset;
+          border-radius: 1vh;
+        }
+      }
+      .block-4 {
+        grid-area: C;
+        display: grid;
+        backdrop-filter: blur(20px);
+        border-radius: 3vh;
+      
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: bottom;
+        }
+      }
+      .inp-1 {
+        grid-area: A;
+        height: 70%;
+        gap: 10px;
+      }
+      .inp-2 {
+        grid-area: B;
+        height: 70%;
+      }
+      .inp-3 {
+        grid-area: C;
+        height: 70%;
+      }
+      .inp-4 {
+        grid-area: D;
+        height: 20vh;
+      }
+      .inp-5 {
+        grid-area: E;
+      
+        & button {
+          background-color: #ebb400;
+          box-shadow: inset 0 0px 0 rgb(243, 191, 48);
+          transition: 1s;
+          font-family: Bowlby One;
+          font-size: 3vh;
+      
+          &:hover {
+            box-shadow:
+              inset 0 -13vh 0 #000000,
+              2px 2px 3px rgba(0, 0, 0, 0.3);
+            outline: 2px solid #000000;
+            color: #ffffff;
+            transition: 1s;
+          }
+        }
+      }
+      [class^="block-"] {
+        display: grid;
+      }
+      [class^="inp-"] {
+        display: grid;
+      }
+      /*forms end*/
 *  <h2 id="footer">footer</h2>
     подвал сайта. В нем будет справочная информация + iframe (т.к. это есть в задании). Этот блок мы разделим на 3
   *   Разметка под три точки. Класс так и назовем for_dot. В html разметке сделаем конструкцию ul, в которую поместим три li, а в них загруженные из фигмы точки в формате svg
