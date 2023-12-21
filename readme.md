@@ -15,7 +15,7 @@
     *  <a href="#tile_group">Tile group</a>
     *  <a href="#uper">Uper</a>
     *  <a href="#support">Support</a>
-    *  <a herf="wrapper">Wrapper</a>
+    *  <a herf="#wrapper">Wrapper</a>
     *  <a href="#footer">Footer</a>
 *  <a href="#fin_task">Выполненные задачи</a> 
 
