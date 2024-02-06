@@ -1,0 +1,131 @@
+/*forms start*/
+.wrapper {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background: rgb(45, 43, 43);
+    background: linear-gradient(
+        0deg,
+        rgba(45, 43, 43, 1) 0%,
+        rgba(45, 43, 43, 1) 34%,
+        rgba(168, 151, 116, 0.95) 57%,
+        rgba(226, 199, 146, 0.95) 77%,
+        rgba(255, 237, 209, 1) 100%
+    );
+}
+.wrapper_box {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin-bottom: 0;
+}
+.forms {
+    display: grid;
+    gap: 2vh;
+    margin: 5vh 3vh 4vh 3vh;
+    grid-template-areas:
+        "A A A A"
+        "B C C C"
+        "D C C C";
+
+    & h1 {
+        width: 45%;
+    }
+}
+.block-1 {
+    display: grid;
+    grid-area: A;
+    height: 20vh;
+    border-radius: 2vh;
+    background: #ffe9c6;
+    box-shadow: 1.5vh -1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+}
+.block-2 {
+    display: grid;
+    grid-area: B;
+    align-items: center;
+}
+.block-3 {
+    display: grid;
+    grid-area: D;
+    border-radius: 3vh;
+    gap: 1.5vh;
+    background: linear-gradient(180deg, #ffe5a3 0.07%, rgba(144, 101, 34, 0.5) 50.81%, rgba(45, 43, 43, 0) 135.38%);
+    padding: 3vh 3vh 3vh 3vh;
+    box-shadow: -1vh 0.9vh 0.2vh 0vh rgba(0, 0, 0, 0.25) inset;
+    grid-template-areas:
+        "A A"
+        "B C"
+        "D D"
+        "E E";
+
+    & input {
+        border: 1px solid #000;
+        background: #fff0d8;
+        box-shadow: 0.3vh 0.5vh 0.4vh 0px rgba(0, 0, 0, 0.25) inset;
+        border-radius: 1vh;
+    }
+    & textarea {
+        border: 1px solid #000;
+        background: #fff0d8;
+        box-shadow: 0.3vh 0.5vh 0.4vh 0px rgba(0, 0, 0, 0.25) inset;
+        border-radius: 1vh;
+    }
+}
+.block-4 {
+    grid-area: C;
+    display: grid;
+    backdrop-filter: blur(20px);
+    border-radius: 3vh;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+    }
+}
+.inp-1 {
+    grid-area: A;
+    height: 70%;
+    gap: 10px;
+}
+.inp-2 {
+    grid-area: B;
+    height: 70%;
+}
+.inp-3 {
+    grid-area: C;
+    height: 70%;
+}
+.inp-4 {
+    grid-area: D;
+    height: 20vh;
+}
+.inp-5 {
+    grid-area: E;
+
+    & button {
+        background-color: #ebb400;
+        box-shadow: inset 0 0px 0 rgb(243, 191, 48);
+        transition: 1s;
+        font-family: Bowlby One;
+        font-size: 3vh;
+
+        &:hover {
+            box-shadow:
+                inset 0 -13vh 0 #000000,
+                2px 2px 3px rgba(0, 0, 0, 0.3);
+            outline: 2px solid #000000;
+            color: #ffffff;
+            transition: 1s;
+        }
+    }
+}
+[class^="block-"] {
+    display: grid;
+}
+[class^="inp-"] {
+    display: grid;
+}
+/*forms end*/

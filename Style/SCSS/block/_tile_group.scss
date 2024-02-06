@@ -1,0 +1,112 @@
+/*tile start*/
+.tile_group {
+    display: grid;
+    margin: 0vh 11vh 2vh 7vh;
+    gap: 3vh;
+    grid-template-areas:
+        "A A A   C C C   E E E E E"
+        "A A A   C C C   E E E E E"
+        "A A A   C C C   E E E E E"
+        "B B B   D D D   E E E E E"
+        "B B B   D D D   E E E E E"
+        "B B B   D D D   E E E E E";
+
+    & p {
+        padding: 1.5vh 1.5vh 0vh 1.5vh;
+    }
+}
+.tile-1 {
+    grid-area: A;
+    background: url(../../Img/tp_link.png) center;
+    background-size: cover;
+    width: 45vh;
+    height: 45vh;
+    background-color: rgb(45, 43, 43);
+    box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+    transition: 0.6s;
+
+    &:hover {
+        transition: 0.6s;
+        opacity: 0.8;
+        width: 110%;
+        height: 110%;
+    }
+}
+.tile-2 {
+    grid-area: B;
+    width: 45vh;
+    height: 45vh;
+    gap: 1vh;
+    grid-template-areas:
+        "A B"
+        "C D";
+}
+.tile_little-1 {
+    grid-area: A;
+}
+.tile_little-2 {
+    grid-area: B;
+}
+.tile_little-3 {
+    grid-area: C;
+}
+.tile_little-4 {
+    grid-area: D;
+}
+[class^="tile_little-"] {
+    font-size: 8vh;
+    display: grid;
+    border-radius: 9vh;
+    color: #fff;
+    text-align: center;
+    place-items: center;
+    box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+    background: rgb(45, 43, 43);
+    background: linear-gradient(
+        180deg,
+        rgba(45, 43, 43, 1) 0%,
+        rgba(45, 43, 43, 1) 34%,
+        rgba(168, 151, 116, 0.95) 57%,
+        rgba(226, 199, 146, 0.95) 77%,
+        rgba(255, 237, 209, 1) 100%
+    );
+}
+.tile-3 {
+    grid-area: C;
+    font-size: 1.8vh;
+    width: 45vh;
+    height: 45vh;
+    background-color: rgb(45, 43, 43);
+    box-shadow: 11px 15px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.tile-4 {
+    grid-area: D;
+    width: 45vh;
+    height: 45vh;
+    background: url(../../Img/mikrotik.png) center;
+    background-size: cover;
+    background-color: rgb(45, 43, 43);
+    box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+    transition: 0.6s;
+
+    &:hover {
+        transition: 0.6s;
+        opacity: 0.8;
+        width: 90%;
+        height: 90%;
+    }
+}
+.tile-5 {
+    grid-area: E;
+    width: 60vh;
+    font-size: 3.6vh;
+    background-color: rgb(45, 43, 43);
+    box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+}
+[class^="tile-"] {
+    display: grid;
+    border-radius: 7vh;
+    color: #fff;
+    text-align: justify;
+}
+/*tile end*/
