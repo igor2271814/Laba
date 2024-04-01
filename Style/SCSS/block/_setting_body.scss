@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Bowlby One";
+    src: url(../../font/BowlbyOne/BowlbyOne-Regular.ttf);
+}
+input:-moz-placeholder {
+    font-family: Bowlby One;
+}
+input::-webkit-input-placeholder {
+    font-family: Bowlby One;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+::-moz-scrollbar {
+    display: none;
+}
+::-ms-scrollbar {
+    display: none;
+}
+body {
+    background: rgba(255, 237, 209, 0.89);
+    font-family: "Bowlby One";
+    margin: 0;
+    transition: 0.7s;
+}
+.main_setting {
+    display: flex;
+    flex-direction: column;
+}

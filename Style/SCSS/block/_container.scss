@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    width: auto;
+    height: 80vh;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+.cart {
+    display: flex;
+    margin-left: 5vw;
+    width: 14vw;
+    height: 100%;
+    transform: skew(-15deg);
+    background: #e2cf7c;
+    justify-content: center;
+    transition: 0.5s ease;
+
+    & img {
+        transform: rotate(-10deg);
+        transition: 0.5s ease;
+    }
+
+    &:hover {
+        width: 40vw;
+        background: #ffdb67;
+        transition: 0.5s ease;
+        & img {
+            transform: rotate(80deg);
+            transition: 0.5s ease;
+        }
+        & .top_layer {
+            background-color: rgba(57, 57, 57, 0);
+            transition: 0.5s ease;
+            width: 0vw;
+        }
+    }
+}
+.top_layer {
+    position: absolute;
+    background-color: rgba(57, 57, 57, 0.4);
+    width: 14vw;
+    height: 100%;
+    transform: skew(0deg);
+    transition: 0.5s ease;
+}
