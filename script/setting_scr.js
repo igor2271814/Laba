@@ -3,18 +3,22 @@
 document.querySelector('.setting_menu').addEventListener('click', () => {
     const setting_menuOpen = document.querySelector('.setting_menu_open');
     const setting_closeMenu = document.querySelector('.setting_close_menu');
+    const setting_darkening = document.querySelector('.darkening');
 
     setting_menuOpen.classList.add('setting_active');
     setting_closeMenu.classList.add('setting_active');
+    setting_darkening.classList.add('setting_active');
 });
 
 document.querySelector('.setting_close_menu').addEventListener('click', () => {
     const setting_menuOpen = document.querySelector('.setting_menu_open');
     const setting_closeMenu = document.querySelector('.setting_close_menu');
+    const setting_darkening = document.querySelector('.darkening');
 
     setting_closeMenu.classList.remove('setting_active');
     setTimeout(() => {
-        setting_menuOpen.classList.remove('setting_active');
+      setting_menuOpen.classList.remove('setting_active');
+      setting_darkening.classList.remove('setting_active');
     }, 70);
 });
 

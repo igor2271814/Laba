@@ -11,9 +11,10 @@
     width: 14vw;
     height: 100%;
     transform: skew(-15deg);
-    background: #e2cf7c;
+
     justify-content: center;
     transition: 0.5s ease;
+    box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
 
     & img {
         transform: rotate(-10deg);

@@ -1,0 +1,57 @@
+.about_table {
+    grid-template-areas:
+        "D E"
+        "F F";
+    width: 100%;
+    display: grid;
+
+    & p {
+        background-color: #ffdf75;
+        text-align: center;
+        border-radius: 1vw;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+            background-color: #fcd041;
+            transition: 0.5s ease-in-out;
+        }
+    }
+    & h1 {
+        font-size: 8vh;
+        text-align: center;
+    }
+    & .ab_grid-1 {
+        grid-area: D;
+        display: grid;
+        grid-template-columns: repeat(3, 13vw);
+        grid-template-rows: repeat(4, 6vh);
+
+        & .lef {
+            grid-column: 2;
+            grid-row: 2;
+        }
+    }
+    & .ab_grid-2 {
+        grid-area: E;
+        display: grid;
+        grid-template-columns: minmax(13vw, 1fr) minmax(13vw, 1fr) minmax(13vw, 1fr);
+        grid-template-rows: minmax(6vh, 1vh) minmax(6vh, 1vh) minmax(6vh, 1vh) minmax(6vh, 1vh);
+
+        & .rig {
+            grid-column: 3;
+            grid-row: 4;
+        }
+    }
+    & .ab_grid-3 {
+        grid-area: F;
+        display: grid;
+        grid-template-columns: repeat(3, 13vw);
+        grid-template-rows: repeat(4, 6vh);
+
+        & .bot {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }
+}

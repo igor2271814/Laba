@@ -1,0 +1,72 @@
+.diagonal {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    justify-content: space-between;
+}
+.first_line {
+    display: flex;
+    align-items: start;
+}
+.second_line {
+    display: flex;
+    align-items: center;
+}
+.third_line {
+    display: flex;
+    align-items: end;
+}
+.first {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background: url(../../../Img/diagonal_micro.webp);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    transition: 0.7s;
+    box-shadow: 1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        width: 300px;
+        height: 300px;
+        transition: 0.7s;
+    }
+}
+.second {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background: url(../../../Img/diagonal_keen.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    transition: 0.7s;
+    box-shadow: 0vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        width: 300px;
+        height: 300px;
+        transition: 0.7s;
+    }
+}
+.third {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background: url(../../../Img/diagonal_tp.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    transition: 0.7s;
+    box-shadow: -1vh 1.5vh 0.4vh 0vh rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        width: 300px;
+        height: 300px;
+        transition: 0.7s;
+    }
+}

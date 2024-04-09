@@ -26,4 +26,21 @@ body {
 .main_setting {
     display: flex;
     flex-direction: column;
+    margin: 0 2vh 0 2vh;
+}
+.darkening {
+    background: rgba(0, 0, 0, 0);
+    width: 1vw;
+    height: 100%;
+    z-index: 10;
+    position: fixed;
+    transition: all 0.5s ease-out;
+
+    &.setting_active {
+        display: block;
+        background: rgba(0, 0, 0, 0.8);
+        transition: all 0.5s ease-out;
+        width: 100vw;
+        backdrop-filter: blur(10px);
+    }
 }

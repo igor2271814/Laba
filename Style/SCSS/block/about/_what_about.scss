@@ -1,0 +1,33 @@
+[class^="about-"] {
+    display: grid;
+}
+.what_about {
+    width: 90%;
+    display: grid;
+    gap: 2vh;
+    grid-template-areas:
+        "A C"
+        "B C";
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    & h1 {
+        font-size: 5vw;
+    }
+    & p {
+        font-size: 1.3vw;
+    }
+}
+.about-1 {
+    grid-area: A;
+}
+.about-2 {
+    grid-area: B;
+    text-align: justify;
+}
+.about-3 {
+    grid-area: C;
+}

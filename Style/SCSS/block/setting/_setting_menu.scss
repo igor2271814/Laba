@@ -1,13 +1,13 @@
 /*menu start*/
 .setting_menu {
     transition: 0.7s;
-    display: grid;
+    display: flex;
     position: fixed;
+    flex-direction: column;
     z-index: 12;
     left: 2vh;
     top: 5.5vh;
-    justify-items: end;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 1vh 1vh 1vh 3vh;
     background: #000000;
     background-blend-mode: color-burn;
@@ -24,28 +24,27 @@
     }
 }
 [class^="setting_box-"] {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: space-around;
     height: 1vh;
     cursor: pointer;
 }
 .setting_menu_open {
-    display: grid;
-    justify-content: center;
+    display: flex;
     position: fixed;
     transform: translateX(100vh);
-    width: 25%;
+    width: 25vw;
     height: 96vh;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 1);
     color: aliceblue;
     transition: right 0.7s 0.7s;
     border-radius: 0vh 3vh 3vh 0vh;
 }
 
 .setting_menu_open {
+    flex-direction: column;
     transform: translateX(-100vh);
     transition: transform 0.7s ease-in-out;
-
     & span {
         margin-top: 2vh;
         text-align: right;
@@ -80,26 +79,38 @@
         }
         &:hover {
             transition: 0.7s;
-            box-shadow:
-                inset 0 -7vh 0 rgb(240, 204, 3),
-                0.3vh 0.7vh 0.26vh 0vh rgba(255, 252, 252, 0.25);
         }
     }
 }
 
 .setting_menu_open.setting_active {
-    transform: translateX(41vh);
-    & span {
+    flex-direction: column;
+    place-items: center;
+    place-content: start;
+    transform: translateX(0vh);
+
+    & .line {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 97%;
+
+        & h1 {
+            margin-left: 1vh;
+        }
+    }
+    & span1 {
         margin-top: 2vh;
         text-align: right;
         font-size: 3vh;
-        width: 120%;
+
         cursor: pointer;
         transition: 0.4s;
+        opacity: 0.7;
 
         &:hover {
-            color: #ebb400;
             transition: 0.4s;
+            opacity: 1;
         }
     }
     & a {
@@ -107,11 +118,11 @@
         text-decoration: none;
         text-align: center;
         padding: 1vh 1vh 1vh 1vh;
-        background-color: #ffedd1;
         border-radius: 2vh;
         box-shadow: inset 0.3vh 0.7vh 0.26vh 0pvh rgba(255, 252, 252, 0.25);
-        width: 35vh;
+        width: 80%;
         transition: 0.7s;
+        opacity: 0.5;
 
         &::before {
             content: "<<";
@@ -123,17 +134,24 @@
         }
         &:hover {
             transition: 0.7s;
-            box-shadow:
-                inset 0 -7vh 0 rgb(240, 204, 3),
-                0.3vh 0.7vh 0.26vh 0vh rgba(255, 252, 252, 0.25);
+            opacity: 1;
         }
     }
 }
 [class^="setting_ladder-"] {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     place-items: center;
-    width: 30vh;
+    width: 100%;
     font-size: 3vh;
+}
+.direction {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    margin: 10vh 0 10vh 0;
 }
 
 .setting_close_menu {
@@ -143,5 +161,18 @@
 
 .setting_close_menu.setting_active {
     transform: scale(1);
+    transition: transform 0.7s ease-in-out;
 }
 /*menu end*/
+#class1 {
+    background: url(../../../Img/41.jpg);
+}
+#class2 {
+    background: url(../../../Img/setting_test_back2.webp);
+}
+#class3 {
+    background: url(../../../Img/setting_test_back3.webp);
+}
+#class4 {
+    background: url(../../../Img/setting_test_back1.jpg);
+}
