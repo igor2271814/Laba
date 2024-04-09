@@ -9,7 +9,7 @@
   width: 100%;
   height: 5vh;
   color: #fff;
-  grid-template-columns: 14vh 12vh 14vh 14vh auto auto;
+  grid-template-columns: 16vh 14vh 15vh 15vh auto auto;
   gap: 8vh;
   font-size: 2vh;
   align-items: center;
@@ -46,7 +46,9 @@
   }
 }
 [class^=router-] {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
 }
 
 /*header end*/
