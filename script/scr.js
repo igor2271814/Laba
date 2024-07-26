@@ -29,8 +29,19 @@ window.addEventListener('scroll', e => {
     if(scrollY > 50) header.add(active_class)
     else header.remove(active_class)
 })
+
+// Темная тема
 const btn = document.querySelector(".toggle");
 const theme = document.querySelector("#theme-link");
+//Проверка времени для автосмены темы
+let nowDate = new Date();
+console.log(nowDate.getHours());
+let currentDate = nowDate.getHours();
+
+if (currentDate >= 18 || currentDate < 6) {
+  theme.href = "Style/CSS/dark_style.css";
+}
+//Проверка времени для автосмены темы
 btn.addEventListener("click", function() {
   if (theme.getAttribute("href") == "Style/CSS/style.css") {
     theme.href = "Style/CSS/dark_style.css";
